@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="">
+	
+	<application setting='false'>
+		<name><![CDATA[山寨今日头条]]></name>
+
+		<identifie><![CDATA[like_toutiao]]></identifie>
+
+		<version><![CDATA[1.0.0]]></version>
+
+		<ability><![CDATA[xxx]]></ability>
+
+		<type><![CDATA[biz]]></type>
+
+		<description><![CDATA[今日头条应用]]></description>
+
+		<author><![CDATA[bendilaosiji]]></author>
+
+		<url><![CDATA[]]></url>
+
+		<setting><![CDATA[]]></setting>
+
+	</application>
+
+	
+	<platform>
+		<subscribes>
+			<message type="text" />
+
+			<message type="image" />
+
+			<message type="voice" />
+
+			<message type="video" />
+
+			<message type="user_consume_card" />
+
+			<message type="user_del_card" />
+
+			<message type="user_get_card" />
+
+			<message type="merchant_order" />
+
+			<message type="view" />
+
+			<message type="click" />
+
+			<message type="trace" />
+
+			<message type="qr" />
+
+			<message type="unsubscribe" />
+
+			<message type="subscribe" />
+
+			<message type="link" />
+
+			<message type="location" />
+
+			<message type="shortvideo" />
+
+		</subscribes>
+
+		<handles>
+
+			<message type="text" />
+			<message type="image" />
+			<message type="voice" />
+			<message type="video" />
+			<message type="shortvideo" />
+			<message type="location" />
+			<message type="link" />
+			<message type="subscribe" />
+			<message type="user_consume_card" />
+			<message type="user_del_card" />
+			<message type="user_get_card" />
+			<message type="merchant_order" />
+			<message type="click" />
+			<message type="qr" />
+			<message type="trace" />
+		</handles>
+
+		<rule embed="false" />
+
+		<rule embed="false" />
+
+	<supports>
+
+			<item type="wxapp" />
+	</supports>
+
+	</platform>
+
+	
+	<bindings>
+
+		<menu>
+			<entry title="用户中心" do="users" state="users" direct="" />
+			<entry title="分类管理" do="fenlei" state="fenlei" direct="" />
+			<entry title="新闻管理" do="xinwen" state="xinwen" direct="" />
+			<entry title="收藏管理" do="shoucang" state="shoucang" direct="" />
+		</menu>
+
+	</bindings>
+
+	<install><![CDATA[]]></install>
+	<uninstall><![CDATA[]]></uninstall>
+	<upgrade><![CDATA[]]></upgrade>
+</manifest>

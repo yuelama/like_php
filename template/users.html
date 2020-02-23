@@ -1,0 +1,74 @@
+{template 'common/header'}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            用户管理
+        </h3>
+    </div>
+    <div class="panel-body">
+        
+		<table class="table">
+  <caption> 
+  
+		   <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" id="sotxt" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" id="sosuo" type="button"  >搜索</button>
+                    </span>
+                </div>
+            </div>
+			
+			</caption>
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>用户openid</th>
+	  <th>昵称</th>
+	  <th>头像</th>
+    </tr>
+  </thead>
+  <tbody id="rongqi">
+    {loop  $userslist   $item}
+    <tr>
+      <td>{$item['id']}</td>
+      <td>{$item['openid']}</td>
+	  <td>{$item['nickname']}</td>
+      <td>{$item['headimg']}</td>
+	
+    </tr>
+   {/loop}
+  </tbody>
+</table>
+		{$pager}
+		
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+       //修改封面图片
+       //$(".img-responsive").attr("src","{$newsdata['newsimg']}");	 
+      //修改封面文本框	   
+		//$("input[name='newsimg']").val("{$newsdata['newsimg']}"); 
+   });
+   
+  $("#sosuo").click(function(){
+  var keyword=$("#sotxt").val();
+  if(keyword == "" || keyword == null || keyword == undefined){
+	alert("请输入用户的昵称");
+	return;
+  }
+  var newhtml="";
+  $.getJSON("{php echo $this->createWebUrl('sosuo');}&keyword="+keyword+"&type=sosuo",function(result){
+        for(var i=0;i<result.length;i++){
+			newhtml+="<tr><td>"+result[i].id+"</td><td>"+result[i].openid+"</td><td>"+result[i].nickname+"</td><td>"+result[i].headimg+"</td></tr>";
+		}
+		$("#rongqi").html("");
+		$("#rongqi").html(newhtml);
+		
+  });
+});
+       
+      
+</script>
+{template 'common/footer'}

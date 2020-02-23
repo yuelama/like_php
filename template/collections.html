@@ -1,0 +1,36 @@
+{template 'common/header'}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            用户收藏管理
+        </h3>
+    </div>
+    <div class="panel-body">
+        
+		<table class="table">
+  <caption></caption>
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>新闻id</th>
+	  <th>新闻标题</th>
+    </tr>
+  </thead>
+  <tbody>
+    {loop  $collectionslist   $item}
+    <tr>
+      <td>{$item['id']}</td>
+      <td>{$item['newid']}</td>
+	  {php $title =pdo_get('like_toutiao_news',array('id'=>$item['newid']));}
+	  <td>{php echo $title['title'];}</td>
+	
+    </tr>
+   {/loop}
+  </tbody>
+</table>
+		{$pager}
+		
+    </div>
+</div>
+
+{template 'common/footer'}

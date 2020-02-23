@@ -1,0 +1,36 @@
+{template 'common/header'}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            新闻管理
+        </h3>
+    </div>
+    <div class="panel-body">
+        
+		<table class="table">
+  <caption><a   class="btn btn-info" href="{php echo $this->createWebUrl('newsadd');}">添加新闻</a></caption>
+  <thead>
+    <tr>
+      <th>新闻id</th>
+      <th>新闻标题</th>
+	  <th>添加时间</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {loop  $newslist   $item}
+    <tr>
+      <td>{$item['id']}</td>
+      <td>{$item['title']}</td>
+	  <td>{php echo date("Y-m-d h:i:s", $item['createtime']);}</td>
+	  <td><a href="{php echo $this->createWebUrl('newsdel');}&id={$item['id']}">删除</a>|<a href="{php echo $this->createWebUrl('newsupd');}&id={$item['id']}">修改</a></td>
+    </tr>
+   {/loop}
+  </tbody>
+</table>
+		
+		
+    </div>
+</div>
+
+{template 'common/footer'}
